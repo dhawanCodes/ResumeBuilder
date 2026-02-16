@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Resume Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        Resume<span>Builder</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="founder.html">Founder</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <!-- FORM SECTION -->
+    <div class="form-section">
+        <h2>Fill Your Details</h2>
+
+        <input id="fullName" placeholder="Full Name" oninput="updatePreview()">
+        <input id="title" placeholder="Professional Title" oninput="updatePreview()">
+        <input id="phone" placeholder="Phone" oninput="updatePreview()">
+        <input id="email" placeholder="Email" oninput="updatePreview()">
+        <input id="location" placeholder="Location" oninput="updatePreview()">
+
+        <textarea id="summary" placeholder="Professional Summary" oninput="updatePreview()"></textarea>
+        
+        <textarea id="techSkills" placeholder="Technical Skills (Eg. Java, Excel, etc.)"
+        oninput="updatePreview()"></textarea>
+
+        <textarea id="softSkills" placeholder="Key Skills (Eg. Communication skill, Problem Solving, etc.) "
+        oninput="updatePreview()"></textarea>
+
+        <h3>Experience</h3>
+        <div id="experienceContainer"></div>
+        <button type="button" class="add-exp-btn" onclick="addExperience()">+ Add Experience</button>
+
+        <!-- PROJECTS -->
+        <h3>Projects</h3>
+        <div id="projectContainer"></div>
+        <button type="button" class="add-exp-btn" onclick="addProject()">+ Add Project</button>
+
+        <!-- EDUCATION (FIXED HERE) -->
+        <h3>Education</h3>
+        <div id="educationContainer"></div>
+        <button type="button" class="add-exp-btn" onclick="addEducation()">
+            + Add Education
+        </button>
+
+
+        <!-- CERTIFICATIONS -->
+        <h3>Certifications</h3>
+        <div id="certContainer"></div>
+        <button type="button" class="add-exp-btn" onclick="addCertification()">+ Add Certification</button>
+
+        <!-- ACHIEVEMENTS -->
+        <h3>Achievements</h3>
+        <div id="achievementContainer"></div>
+        <button type="button" class="add-exp-btn" onclick="addAchievement()">+ Add Achievement</button>
+        
+        <div class="pdf-section">
+            <h3>Download Your Resume</h3>
+            <p>Preview your resume and export it as a professional PDF.</p>
+
+            <button class="pdf-btn" onclick="downloadPDF()">
+                ⬇ Download PDF
+            </button>
+        </div>
+    
+    </div>
+
+    <!-- PREVIEW SECTION -->
+    <div class="preview-section">
+        <div id="resumePreview">
+
+            <!-- HEADER -->
+            <div id="headerSection" class="hidden">
+                <h1 id="previewName"></h1>
+                <p id="previewTitle"></p>
+                <p id="previewContact"></p>
+            </div>
+
+            <!-- SUMMARY -->
+            <div id="summarySection" class="section hidden">
+                <h3>PROFESSIONAL SUMMARY</h3>
+                <p id="previewSummary"></p>
+            </div>
+
+            <!-- SKILLS -->
+            <div id="skillsSection" class="section hidden">
+                <h3>SKILLS</h3>
+
+                <strong>Technical Skills</strong>
+                <ul id="previewTechSkills"></ul>
+
+                <strong>Key Skills</strong>
+                <ul id="previewSoftSkills"></ul>
+            </div>
+
+            <!-- EXPERIENCE -->
+            <div id="experienceSection" class="section hidden">
+                <h3>PROFESSIONAL EXPERIENCE</h3>
+                <div id="previewExperience"></div>
+            </div>
+
+            <!-- PROJECTS -->
+            <div id="projectsSection" class="section hidden">
+                <h3>PROJECTS</h3>
+                <div id="previewProjects"></div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div id="educationSection" class="section hidden">
+                <h3>EDUCATION</h3>
+                <div id="previewEducation"></div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <div id="certSection" class="section hidden">
+                <h3>CERTIFICATIONS</h3>
+                <ul id="previewCertifications"></ul>
+            </div>
+            <!-- ACHIEVEMENTS -->
+            <div id="achievementSection" class="section hidden">
+                <h3>Achievements</h3>
+                <ul id="previewAchievements"></ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
